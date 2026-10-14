@@ -1,0 +1,14 @@
+{
+	"provideLibs": [	
+		    "libdummy_headers_libdrm-x86_64-v2.so",
+		    "libdummy_headers_libdrm.so",
+		    "libdummy_libdrm_dev-x86_64-v2.so",
+		    "libdummy_libdrm_dev.so",
+		    "libdummy_pkgconfig_libdrm-x86_64-v2.so",
+		    "libdummy_pkgconfig_libdrm.so"
+	],
+	"requireLibs": [	
+		    "libdummy-libdrm.so"
+	],
+	"visible": true
+}

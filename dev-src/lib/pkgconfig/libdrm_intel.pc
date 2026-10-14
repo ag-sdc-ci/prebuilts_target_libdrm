@@ -1,0 +1,11 @@
+prefix=/apex/org.blisslabs.ag.libdrm
+includedir=${prefix}.dev/include
+libdir=${prefix}/lib
+
+Name: libdrm_intel
+Description: Userspace interface to intel kernel DRM services
+Version: 2.4.134
+Requires: libdrm
+Libs: -L${libdir} -L${prefix}.dev/lib -ldrm_intel
+Libs.private: -pthread
+Cflags: -I${includedir} -I${includedir}/libdrm

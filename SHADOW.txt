@@ -1,0 +1,6 @@
+shadow prebuilt repo: libdrm (target)
+  upstream: external/libdrm
+  api-level: 32 (branch 32-20261010)
+  blobs: org.blisslabs.ag.libdrm-2004135.apex org.blisslabs.ag.libdrm.dev-2004135.apex 
+  dev-src: extracted dev payload + regenerated root Android.bp (gen_extractive_bp.py)
+  date: 2026-10-10

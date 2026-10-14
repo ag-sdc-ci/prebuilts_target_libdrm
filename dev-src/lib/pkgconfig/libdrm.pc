@@ -1,0 +1,9 @@
+prefix=/apex/org.blisslabs.ag.libdrm
+includedir=${prefix}.dev/include
+libdir=${prefix}/lib
+
+Name: libdrm
+Description: Userspace interface to kernel DRM services
+Version: 2.4.134
+Libs: -L${libdir} -L${prefix}.dev/lib -ldrm
+Cflags: -I${includedir} -I${includedir}/libdrm
