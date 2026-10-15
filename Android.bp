@@ -27,6 +27,32 @@ cc_prebuilt_library_shared {
     min_sdk_version: "29",
 }
 
+cc_prebuilt_library_shared {
+    name: "libdrm",
+    vendor_available: true,
+    product_available: true,
+    recovery_available: true,
+    host_supported: true,
+    check_elf_files: false,
+    arch: {
+        x86_64: {
+            srcs: [
+                "dev-src/lib/libdrm.so",
+            ],
+        },
+    },
+    export_include_dirs: [
+        "dev-src/include",
+        "dev-src/include/libdrm",
+    ],
+    prefer: true,
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "29",
+}
+
 cc_library_headers {
     name: "libdrm_include_headers",
     vendor_available: true,
@@ -60,5 +86,3 @@ cc_library_headers {
     ],
     min_sdk_version: "29",
 }
-
-
