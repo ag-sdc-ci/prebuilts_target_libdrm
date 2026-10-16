@@ -5,6 +5,20 @@ package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
+prebuilt_apex {
+    name: "org.blisslabs.ag.libdrm",
+    apex_name: "org.blisslabs.ag.libdrm",
+    source_apex_name: "org.blisslabs.ag.libdrm",
+    arch: {
+        x86_64: {
+            src: "org.blisslabs.ag.libdrm-2004135.apex",
+        },
+    },
+    filename: "org.blisslabs.ag.libdrm-2004135.apex",
+    prefer: true,
+    installable: true,
+}
+
 cc_prebuilt_library_shared {
     name: "libdummy_libdrm_dev",
     vendor_available: true,
@@ -38,6 +52,110 @@ cc_prebuilt_library_shared {
         x86_64: {
             srcs: [
                 "dev-src/lib/libdrm.so",
+            ],
+        },
+    },
+    export_include_dirs: [
+        "dev-src/include",
+        "dev-src/include/libdrm",
+    ],
+    prefer: true,
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "29",
+}
+
+cc_prebuilt_library_shared {
+    name: "libdrm_amdgpu",
+    vendor_available: true,
+    product_available: true,
+    recovery_available: true,
+    host_supported: true,
+    check_elf_files: false,
+    arch: {
+        x86_64: {
+            srcs: [
+                "dev-src/lib/libdrm_amdgpu.so",
+            ],
+        },
+    },
+    export_include_dirs: [
+        "dev-src/include",
+        "dev-src/include/libdrm",
+    ],
+    prefer: true,
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "29",
+}
+
+cc_prebuilt_library_shared {
+    name: "libdrm_intel",
+    vendor_available: true,
+    product_available: true,
+    recovery_available: true,
+    host_supported: true,
+    check_elf_files: false,
+    arch: {
+        x86_64: {
+            srcs: [
+                "dev-src/lib/libdrm_intel.so",
+            ],
+        },
+    },
+    export_include_dirs: [
+        "dev-src/include",
+        "dev-src/include/libdrm",
+    ],
+    prefer: true,
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "29",
+}
+
+cc_prebuilt_library_shared {
+    name: "libdrm_nouveau",
+    vendor_available: true,
+    product_available: true,
+    recovery_available: true,
+    host_supported: true,
+    check_elf_files: false,
+    arch: {
+        x86_64: {
+            srcs: [
+                "dev-src/lib/libdrm_nouveau.so",
+            ],
+        },
+    },
+    export_include_dirs: [
+        "dev-src/include",
+        "dev-src/include/libdrm",
+    ],
+    prefer: true,
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "29",
+}
+
+cc_prebuilt_library_shared {
+    name: "libdrm_radeon",
+    vendor_available: true,
+    product_available: true,
+    recovery_available: true,
+    host_supported: true,
+    check_elf_files: false,
+    arch: {
+        x86_64: {
+            srcs: [
+                "dev-src/lib/libdrm_radeon.so",
             ],
         },
     },
