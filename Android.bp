@@ -41,20 +41,13 @@ cc_prebuilt_library_shared {
     min_sdk_version: "29",
 }
 
-cc_prebuilt_library_shared {
+cc_prebuilt_library {
     name: "libdrm",
     vendor_available: true,
     product_available: true,
     recovery_available: true,
     host_supported: true,
     check_elf_files: false,
-    arch: {
-        x86_64: {
-            srcs: [
-                "dev-src/lib/libdrm.so",
-            ],
-        },
-    },
     export_include_dirs: [
         "dev-src/include",
         "dev-src/include/libdrm",
@@ -65,22 +58,47 @@ cc_prebuilt_library_shared {
         "//apex_available:anyapex",
     ],
     min_sdk_version: "29",
+    shared: {
+        srcs: [
+            "dev-src/lib/libdrm.so",
+        ],
+    },
+    static: {
+        srcs: [
+            "dev-src/lib/libdrm.a",
+        ],
+    },
 }
 
-cc_prebuilt_library_shared {
+cc_prebuilt_library_static {
+    name: "libdrm_static",
+    vendor_available: true,
+    product_available: true,
+    recovery_available: true,
+    host_supported: true,
+    check_elf_files: false,
+    export_include_dirs: [
+        "dev-src/include",
+        "dev-src/include/libdrm",
+    ],
+    prefer: true,
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "29",
+    srcs: [
+        "dev-src/lib/libdrm.a",
+    ],
+}
+
+cc_prebuilt_library {
     name: "libdrm_amdgpu",
     vendor_available: true,
     product_available: true,
     recovery_available: true,
     host_supported: true,
     check_elf_files: false,
-    arch: {
-        x86_64: {
-            srcs: [
-                "dev-src/lib/libdrm_amdgpu.so",
-            ],
-        },
-    },
     export_include_dirs: [
         "dev-src/include",
         "dev-src/include/libdrm",
@@ -91,22 +109,25 @@ cc_prebuilt_library_shared {
         "//apex_available:anyapex",
     ],
     min_sdk_version: "29",
+    shared: {
+        srcs: [
+            "dev-src/lib/libdrm_amdgpu.so",
+        ],
+    },
+    static: {
+        srcs: [
+            "dev-src/lib/libdrm_amdgpu.a",
+        ],
+    },
 }
 
-cc_prebuilt_library_shared {
+cc_prebuilt_library {
     name: "libdrm_intel",
     vendor_available: true,
     product_available: true,
     recovery_available: true,
     host_supported: true,
     check_elf_files: false,
-    arch: {
-        x86_64: {
-            srcs: [
-                "dev-src/lib/libdrm_intel.so",
-            ],
-        },
-    },
     export_include_dirs: [
         "dev-src/include",
         "dev-src/include/libdrm",
@@ -117,22 +138,25 @@ cc_prebuilt_library_shared {
         "//apex_available:anyapex",
     ],
     min_sdk_version: "29",
+    shared: {
+        srcs: [
+            "dev-src/lib/libdrm_intel.so",
+        ],
+    },
+    static: {
+        srcs: [
+            "dev-src/lib/libdrm_intel.a",
+        ],
+    },
 }
 
-cc_prebuilt_library_shared {
+cc_prebuilt_library {
     name: "libdrm_nouveau",
     vendor_available: true,
     product_available: true,
     recovery_available: true,
     host_supported: true,
     check_elf_files: false,
-    arch: {
-        x86_64: {
-            srcs: [
-                "dev-src/lib/libdrm_nouveau.so",
-            ],
-        },
-    },
     export_include_dirs: [
         "dev-src/include",
         "dev-src/include/libdrm",
@@ -143,22 +167,25 @@ cc_prebuilt_library_shared {
         "//apex_available:anyapex",
     ],
     min_sdk_version: "29",
+    shared: {
+        srcs: [
+            "dev-src/lib/libdrm_nouveau.so",
+        ],
+    },
+    static: {
+        srcs: [
+            "dev-src/lib/libdrm_nouveau.a",
+        ],
+    },
 }
 
-cc_prebuilt_library_shared {
+cc_prebuilt_library {
     name: "libdrm_radeon",
     vendor_available: true,
     product_available: true,
     recovery_available: true,
     host_supported: true,
     check_elf_files: false,
-    arch: {
-        x86_64: {
-            srcs: [
-                "dev-src/lib/libdrm_radeon.so",
-            ],
-        },
-    },
     export_include_dirs: [
         "dev-src/include",
         "dev-src/include/libdrm",
@@ -169,6 +196,16 @@ cc_prebuilt_library_shared {
         "//apex_available:anyapex",
     ],
     min_sdk_version: "29",
+    shared: {
+        srcs: [
+            "dev-src/lib/libdrm_radeon.so",
+        ],
+    },
+    static: {
+        srcs: [
+            "dev-src/lib/libdrm_radeon.a",
+        ],
+    },
 }
 
 cc_library_headers {
