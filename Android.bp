@@ -29,7 +29,7 @@ cc_prebuilt_library_shared {
     arch: {
         x86_64: {
             srcs: [
-                "dev-src/lib/_libdummy.so",
+                "lib64/_libdummy.so",
             ],
         },
     },
@@ -49,8 +49,8 @@ cc_prebuilt_library {
     host_supported: true,
     check_elf_files: false,
     export_include_dirs: [
-        "dev-src/include",
-        "dev-src/include/libdrm",
+        "include",
+        "include/libdrm",
     ],
     prefer: true,
     apex_available: [
@@ -60,12 +60,12 @@ cc_prebuilt_library {
     min_sdk_version: "29",
     shared: {
         srcs: [
-            "dev-src/lib/libdrm.so",
+            "lib64/libdrm.so",
         ],
     },
     static: {
         srcs: [
-            "dev-src/lib/libdrm.a",
+            "lib64/libdrm.a",
         ],
     },
 }
@@ -78,8 +78,8 @@ cc_prebuilt_library_static {
     host_supported: true,
     check_elf_files: false,
     export_include_dirs: [
-        "dev-src/include",
-        "dev-src/include/libdrm",
+        "include",
+        "include/libdrm",
     ],
     prefer: true,
     apex_available: [
@@ -88,7 +88,7 @@ cc_prebuilt_library_static {
     ],
     min_sdk_version: "29",
     srcs: [
-        "dev-src/lib/libdrm.a",
+        "lib64/libdrm.a",
     ],
 }
 
@@ -100,8 +100,8 @@ cc_prebuilt_library {
     host_supported: true,
     check_elf_files: false,
     export_include_dirs: [
-        "dev-src/include",
-        "dev-src/include/libdrm",
+        "include",
+        "include/libdrm",
     ],
     prefer: true,
     apex_available: [
@@ -111,12 +111,12 @@ cc_prebuilt_library {
     min_sdk_version: "29",
     shared: {
         srcs: [
-            "dev-src/lib/libdrm_amdgpu.so",
+            "lib64/libdrm_amdgpu.so",
         ],
     },
     static: {
         srcs: [
-            "dev-src/lib/libdrm_amdgpu.a",
+            "lib64/libdrm_amdgpu.a",
         ],
     },
 }
@@ -129,8 +129,8 @@ cc_prebuilt_library {
     host_supported: true,
     check_elf_files: false,
     export_include_dirs: [
-        "dev-src/include",
-        "dev-src/include/libdrm",
+        "include",
+        "include/libdrm",
     ],
     prefer: true,
     apex_available: [
@@ -140,12 +140,12 @@ cc_prebuilt_library {
     min_sdk_version: "29",
     shared: {
         srcs: [
-            "dev-src/lib/libdrm_intel.so",
+            "lib64/libdrm_intel.so",
         ],
     },
     static: {
         srcs: [
-            "dev-src/lib/libdrm_intel.a",
+            "lib64/libdrm_intel.a",
         ],
     },
 }
@@ -158,8 +158,8 @@ cc_prebuilt_library {
     host_supported: true,
     check_elf_files: false,
     export_include_dirs: [
-        "dev-src/include",
-        "dev-src/include/libdrm",
+        "include",
+        "include/libdrm",
     ],
     prefer: true,
     apex_available: [
@@ -169,12 +169,12 @@ cc_prebuilt_library {
     min_sdk_version: "29",
     shared: {
         srcs: [
-            "dev-src/lib/libdrm_nouveau.so",
+            "lib64/libdrm_nouveau.so",
         ],
     },
     static: {
         srcs: [
-            "dev-src/lib/libdrm_nouveau.a",
+            "lib64/libdrm_nouveau.a",
         ],
     },
 }
@@ -187,8 +187,8 @@ cc_prebuilt_library {
     host_supported: true,
     check_elf_files: false,
     export_include_dirs: [
-        "dev-src/include",
-        "dev-src/include/libdrm",
+        "include",
+        "include/libdrm",
     ],
     prefer: true,
     apex_available: [
@@ -198,12 +198,12 @@ cc_prebuilt_library {
     min_sdk_version: "29",
     shared: {
         srcs: [
-            "dev-src/lib/libdrm_radeon.so",
+            "lib64/libdrm_radeon.so",
         ],
     },
     static: {
         srcs: [
-            "dev-src/lib/libdrm_radeon.a",
+            "lib64/libdrm_radeon.a",
         ],
     },
 }
@@ -219,7 +219,7 @@ cc_library_headers {
         "//apex_available:platform",
     ],
     export_include_dirs: [
-        "dev-src/include",
+        "include",
     ],
     min_sdk_version: "29",
 }
@@ -235,9 +235,9 @@ cc_library_headers {
         "//apex_available:platform",
     ],
     export_include_dirs: [
-        "dev-src/include/libdrm",
-        "dev-src/include/libdrm/nouveau",
-        "dev-src/include/libdrm/nouveau/nvif",
+        "include/libdrm",
+        "include/libdrm/nouveau",
+        "include/libdrm/nouveau/nvif",
     ],
     min_sdk_version: "29",
 }
